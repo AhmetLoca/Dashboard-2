@@ -9,8 +9,8 @@
 }
 
 body{
-  position:relative; /*neden relative verdik????*/
-  min-height:100vh; /*neden min-height verdik????yükseklik olarak ekranin tamamini kapsasin.*/
+  position:relative; 
+  height:100vh; 
   width:100%;
   overflow:hidden;
 }
@@ -33,7 +33,7 @@ body{
 .sidebar .logo_content .logo{
   color:#fff;
   display:flex;
-  height:50px;
+  height:50px;  
   width:100%;
   align-items: center; /*yükseliğine göre ortalanacak.*/
   opacity:0;
@@ -45,12 +45,13 @@ body{
   pointer-events:none;
 }
 
+
+
 /*locale logosu*/
 .sidebar .logo_content .logo i{
   font-size:28px;
   margin-right:5px;
 }
-
 /*locale yazisi*/
 .sidebar .logo_content .logo .logo_name{
   font-size:20px; /*yazi boyutu*/
@@ -71,16 +72,17 @@ body{
   transform:translateX(-50%); /*x eksenine göre -50% yerini değiştir*/
   cursor:pointer;
 }
-
 .sidebar.active #btn{
   left:90%;
 }
 
-/********************nav_list*************************/
+
+/********************nav_list Start*************************/
 .sidebar ul{
-  margin-top:20px;
+  margin-top:20px; /*nav list'e üstten 20px verdim.*/
 } 
 
+/*nav list içerisindeki icon ile yanindaki yazi*/
 .sidebar ul li {
   position:relative;
   height:50px;
@@ -117,22 +119,23 @@ body{
   opacity:1; /*switch mantigi*/
 }
 
-
-
 /*search içerisindeki input*/
 .sidebar ul li input{
-  position:absolute;
+  position:absolute;/*.sidebar ul li position:relative oldugu için input'a absolute verdiğimiz zaman search iconunun hemen yanına geldi.*/
   height:100%;
   width:100%;
   left:0;
   top:0;
   color:#fff;
   border-radius:5px;
-  outline:none;/*????*/
-  border:none;/*???**/
+  outline:none;
+  border:none; /*sınır çizgisini kaldırdık.*/
   background:rgba(51, 46, 46, 0.521);
   padding-left:50px;
   font-size:18px;
+}
+.sidebar ul li input::placeholder{
+  color:rgba(255, 255, 255, 0.74);
 }
 
 /*search iconu*/
@@ -144,8 +147,18 @@ body{
   transition:all 0.4s ease;
 }
 
+/*search iconu hover*/
 .sidebar ul li .bx-search:hover{
   color:#fff;
+}
+
+/*herbir icon*/
+.sidebar ul li i {
+  height:50px;
+  min-width:50px;
+  border-radius:12px;
+  line-height:50px;
+  text-align:center;
 }
 
 /*herbir icon ve icerisindeki yazi*/
@@ -157,22 +170,14 @@ body{
   text-decoration: none;
   border-radius:5px;
   white-space:nowrap;
-  color:#000000;
+  color:#fff9f9e0;
 }
 
 .sidebar ul li a:hover{
   color:#11101d;
-  background:#fff;
+  background:#ffffffe8;
 }
 
-/*herbir icon*/
-.sidebar ul li i {
-  height:50px;
-  min-width:50px;
-  border-radius:12px;
-  line-height:50px;
-  text-align:center;
-}
 
 .sidebar .links_name{
   opacity:0;
@@ -185,8 +190,6 @@ body{
   pointer-events:auto;
 }
 /********************nav_list finish******************************/
-
-
 
 
 /**************sidebar profile content*********************/
@@ -215,9 +218,9 @@ body{
 .sidebar .profile_content .profile .profile_details{
   display:flex;
   align-items:center;
-  opacity:0;
   pointer-events:none;
   white-space:nowrap;
+  opacity:0;
 }
 
 .sidebar.active .profile .profile_details{
@@ -225,10 +228,11 @@ body{
   pointer-events:auto;
   white-space:nowrap;
 }
+
 .sidebar .profile_content .profile .profile_details img{
   height:40px;
   width:35px;
-  object-fit:cover;/*?????*/
+  object-fit:cover;
   border-radius: 12px;
 }
 
@@ -244,7 +248,6 @@ body{
 .sidebar .profile_details .job{
   font-size:12px;
 }
-
 
 .profile #log_out{
   position:absolute;
@@ -270,9 +273,9 @@ body{
 .sidebar.active .profile #log_out{
   background:none;
 }
-/* ***************profile finish********************* */
+/* *************** Profile Finish********************* */
 
-/* home content */
+/**************** Home Content Start ****************** */
 .home_content{
   position:absolute;
   height:100%;
@@ -292,3 +295,4 @@ body{
   width:calc(100% - 240px);
   left:240px;
 }
+/**************** Home Content Finish ****************** */
